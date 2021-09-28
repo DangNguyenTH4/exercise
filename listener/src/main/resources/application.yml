@@ -1,0 +1,8 @@
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: myGroup
+      auto-offset-reset: earliest
+      key-serializer: org.apache.kafka.common.serialization.StringDeserial123izer
+      value-serializer: org.apache.kafka.common.serialization.StringDeser123ializer
