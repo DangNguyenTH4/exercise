@@ -1,14 +1,14 @@
 version: "3.3"
 services:
 
-  # # couchbase db
-  # couchbase:
-  #   image: "couchbase:latest"
-  #   volumes:
-  #   - ./couchbase/node1:/opt/couchbase/var
-  #   ports:
-  #     - 8091-8094:8091-8094
-  #     - 11210:11210
+  # couchbase db
+  couchbase:
+    image: "couchbase:latest"
+    volumes:
+    - ./couchbase/node1:/opt/couchbase/var
+    ports:
+      - 8091-8094:8091-8094
+      - 11210:11210
       
   # kafka and zookeeper    
   zookeeper:
@@ -40,6 +40,8 @@ services:
       - kafka
     environment:
       - TARGETS=kafka:9092
+    volumes:
+      - ./broker:/var/lib/kafka
       
   kafdrop:
     image: obsidiandynamics/kafdrop
